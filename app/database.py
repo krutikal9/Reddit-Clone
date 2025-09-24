@@ -1,5 +1,6 @@
 
 from fastapi import Depends, FastAPI
+from app.models import *
 from sqlmodel import Field, Session, SQLModel, create_engine
 from app.config import settings
 

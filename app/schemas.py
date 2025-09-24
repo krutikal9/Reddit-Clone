@@ -5,8 +5,8 @@ from typing import Optional
 
 class UserBase(BaseModel):
     email:EmailStr
-    class Config:
-        from_attributes = True
+    # class Config:
+    #     from_attributes = True
 
 class UserCreate(UserBase):
     password:str
@@ -23,8 +23,8 @@ class RedditPostBase(BaseModel):
     content: str 
     title: str 
     publish: bool 
-    class Config:
-        from_attributes = True
+    # class Config:
+    #     from_attributes = True
         #upack k time same object use karne k liye
 
 class RedditPostResponse(RedditPostBase):
@@ -36,8 +36,8 @@ class RedditPostResponse(RedditPostBase):
 class RedditPostResponseVotes(BaseModel):
     RedditPost :RedditPostResponse
     votes :int
-    class Config:
-        from_attributes = True
+    # class Config:
+    #     from_attributes = True
 
 class RedditPostCreate(RedditPostBase):
     pass

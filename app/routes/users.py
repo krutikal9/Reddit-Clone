@@ -27,3 +27,12 @@ def create_user(user:UserCreate,db:Session = Depends(get_db)):
 def get_users(db:Session = Depends(get_db)):
     users = db.exec(select(User)).all()
     return users
+
+
+@router.get('/{id}',status_code=status.HTTP_200_OK,response_model=UserResponse)
+def get_users(id:int,db:Session = Depends(get_db)):
+    user = db.get(User,id)
+#    print(user)
+    if not user:
+            raise HTTPException(status_code=404, detail=f"User with {id} not found")
+    return user

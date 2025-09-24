@@ -3,6 +3,8 @@ from app.database import create_db_and_tables
 from app.routes import redditposts, users, auth,votes
 from app.config import Settings
 from fastapi.middleware.cors import CORSMiddleware
+from sqlmodel import SQLModel
+
 
 
 create_db_and_tables()

@@ -1,3 +1,7 @@
-import os
-
-print(os.path.join(os.path.dirname(__file__),'..','.env'))
+test = 'abc122$  jkdl90() '
+result =''
+for i in test:
+    if i.isalnum():
+        print(i.isalnum())
+        result = result +i
+print(result)
